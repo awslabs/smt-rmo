@@ -1,3 +1,6 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 from typing import Callable, Dict, Set
 
 from pysmt.environment import Environment, get_env

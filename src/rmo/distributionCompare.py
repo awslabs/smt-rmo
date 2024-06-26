@@ -1,3 +1,6 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
 # encode some distribution: KL, Bhattacharyya distance, etc
 NEARLY_ZERO = 0.001  # the smallest statistic metric observed in practice is 0.01
 
