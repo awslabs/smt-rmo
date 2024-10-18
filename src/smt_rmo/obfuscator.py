@@ -8,7 +8,7 @@ from pysmt.fnode import FNode
 from pysmt.typing import PySMTType, TypeManager
 from pysmt.walkers import IdentityDagWalker
 
-from rmo.utils import InfiniteTimeoutBudget, TimeoutBudget, track_timeout_budget
+from smt_rmo.utils import InfiniteTimeoutBudget, TimeoutBudget, track_timeout_budget
 
 from .tokenizers import RandomTokenizer, Tokenizer
 

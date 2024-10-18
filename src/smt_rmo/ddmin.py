@@ -8,8 +8,8 @@ from pysmt.environment import Environment
 from pysmt.fnode import FNode
 from pysmt.smtlib.script import SmtLibScript
 
-from rmo.rewriters import Rewriter
-from rmo.utils import InfiniteTimeoutBudget, TimeoutBudget, track_timeout_budget
+from smt_rmo.rewriters import Rewriter
+from smt_rmo.utils import InfiniteTimeoutBudget, TimeoutBudget, track_timeout_budget
 
 
 def ddmin_script(

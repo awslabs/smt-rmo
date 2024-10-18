@@ -1,9 +1,15 @@
 [tool.poetry]
-name = "smt-rmo"
-version = "0.1.0"
+name = "smt_rmo"
+version = "1.0.1"
 description = "Small utility to reduce the size of and obfuscate an SMTLib input while preserving a solver's behavior"
 authors = ["Aws Albarghouthi <awsb@amazon.com>, Antonio Filieri <afilieri@amazon.com>, Miryung Kim <miryung@amazon.com>, Jiyuan Wang <jiyuanw@amazon.com>"]
 readme = "README.md"
+packages = [
+    { include = "smt_rmo", from = "src" },
+    { include = "pysmt", from = "vendors" },
+]
+[tool.poetry.scripts]
+smt-rmo = 'smt_rmo.cli:cli'
 
 [tool.poetry.dependencies]
 python = ">=3.8"

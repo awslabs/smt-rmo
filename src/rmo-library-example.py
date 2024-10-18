@@ -10,19 +10,19 @@ from pysmt.oracles import SizeOracle
 from pysmt.environment import Environment
 from pysmt.smtlib.parser import SmtLibParser
 import pysmt.smtlib.commands as smtcmd
-from rmo.executors import SolverExecutor
-from rmo.library import DefaultDDMinRewriters
-from rmo.oracles import SegFaultExecutionOracle
-from rmo.obfuscator import (
+from smt_rmo.executors import SolverExecutor
+from smt_rmo.library import DefaultDDMinRewriters
+from smt_rmo.oracles import SegFaultExecutionOracle
+from smt_rmo.obfuscator import (
     IdentifiersObfuscatorWalker,
     Renamer,
     replace_constants,
 )
-from rmo.rewriters import AnyRewriter, LambdaRewriter
-from rmo.ddmin import BFSDDMinTraverser, ddmin_script
-from rmo.strategies import BFSGlobalVisitor
-from rmo.tokenizers import RandomTokenizer
-from rmo.utils import (
+from smt_rmo.rewriters import AnyRewriter, LambdaRewriter
+from smt_rmo.ddmin import BFSDDMinTraverser, ddmin_script
+from smt_rmo.strategies import BFSGlobalVisitor
+from smt_rmo.tokenizers import RandomTokenizer
+from smt_rmo.utils import (
     NodeCollectorWalker,
     copy_script_replace_assertions,
     merge_obfuscated,

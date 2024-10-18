@@ -5,14 +5,10 @@ This repository contains SMT Rewriter Modulo Oracles (SMT-RMO), a tool for minim
 
 We recommend using [poetry](https://python-poetry.org) for managing your python environment.
 
-## SMT-RMO CLI
-Now that you have built SMT-RMO, you can execute it via the command line.
-Here are some examples use cases:
-
 ### Minimize and obfuscate a segfaulting input
 Here we want to minimize and obfuscate an SMTLIB script that causes a version of `z3` to segfault.
 ```bash
-python src/RMO.py \
+poetry run python src/smt_rmo/cli.py \
     --oracle=segfault \
     --solver=<z3 solver binary path> \
     --minimize --obfuscate \
@@ -22,7 +18,7 @@ python src/RMO.py \
 ### Obfuscate while maintaining solver stats
 Suppose you have a benchmark that you wish to obfuscate while maintaining its behavior. We define "behavior" using the statistics of an SMT solver, e.g., number of conflicts or memory consumption. In the following example, we will take an SMTLIB script and ask SMT-RMO to obfuscate it while trying to maintain two behaviors of CVC5, `STRINGS_REGISTER_TERM` and `ARITH_UNATE`, which count numbers of different string and arithmetic lemma inferences. We will tolerate a difference of up to 10% in those stats, denoted by `--stats-threshold=0.1`.
 ```bash
-python src/RMO.py \
+poetry run python src/smt_rmo/cli.py \
     --oracle=stats \
     --stats-threshold=0.1 \
     --track-stat theory::strings::inferencesLemma{STRINGS_REGISTER_TERM} \
@@ -41,7 +37,7 @@ If you're unsure which stats to track, simply don't supply any and SMT-RMO will 
 ### Obfuscate while maintaining unsatisfiability
 Suppose you have a formula that is unsat and you want to obfuscate it while maintaining equisatisfiablity. This can be done using the `unsat` oracle.
 ```bash
-python src/RMO.py \
+poetry run python src/smt_rmo/cli.py \
     --oracle=unsat \
     --solver=<cvc4 solver path> \
     --obfuscate \
@@ -52,7 +48,7 @@ python src/RMO.py \
 ### Differential minimization
 Consider a script that causes a performance regression between two versions of a solver. Here we have a script that is solved immediately by `cvc4` but that times out with `cvc5`. We can use a differential oracle to minimize/obfuscate the file while maintaining this difference in performance.
 ```
-python src/RMO.py \
+poetry run python src/smt_rmo/cli.py \
     --oracle=timeout_regression \
     --solver=<cvc4 solver path> \
     --solver2=<cvc5 solver path> \

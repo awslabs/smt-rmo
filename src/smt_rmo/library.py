@@ -9,8 +9,8 @@ from pysmt.environment import Environment, get_env
 from pysmt.fnode import FNode
 from pysmt.walkers import IdentityDagWalker
 
-from rmo.ddmin import DDMinRewriter
-from rmo.rewriters import AnyRewriter, LambdaRewriter
+from smt_rmo.ddmin import DDMinRewriter
+from smt_rmo.rewriters import AnyRewriter, LambdaRewriter
 
 ######## DDMin rewriters ########
 
