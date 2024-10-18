@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import math
-from rmo.oracles import (
+from smt_rmo.oracles import (
     InconsistentSatDifferentialOracle,
     SegFaultExecutionOracle,
     TrueOracle,
@@ -23,21 +23,21 @@ import pathlib
 from time import perf_counter
 import click
 import logging
-from rmo.ddmin import BFSDDMinTraverser, ddmin_assertions, ddmin_script
-from rmo.executors import SolverExecutor
+from smt_rmo.ddmin import BFSDDMinTraverser, ddmin_assertions, ddmin_script
+from smt_rmo.executors import SolverExecutor
 from pysmt.environment import Environment
 from pysmt.smtlib.parser import SmtLibParser, SmtLibScript
 import pysmt.smtlib.commands as smtcmd
 from pysmt.oracles import SizeOracle
-from rmo.library import DEFAULT_GREEDY_REWRITERS, DefaultDDMinRewriters
-from rmo.obfuscator import (
+from smt_rmo.library import DEFAULT_GREEDY_REWRITERS, DefaultDDMinRewriters
+from smt_rmo.obfuscator import (
     IdentifiersObfuscatorWalker,
     Renamer,
     replace_constants,
 )
-from rmo.strategies import BFSGlobalVisitor
-from rmo.tokenizers import RandomTokenizer
-from rmo.utils import (
+from smt_rmo.strategies import BFSGlobalVisitor
+from smt_rmo.tokenizers import RandomTokenizer
+from smt_rmo.utils import (
     MultipleTimeoutBudget,
     NodeCollectorWalker,
     TimeoutBudget,

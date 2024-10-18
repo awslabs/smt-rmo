@@ -22,8 +22,8 @@ from pysmt.oracles import get_logic
 from pysmt.smtlib.parser import SmtLibParser
 from pysmt.smtlib.script import SmtLibCommand, SmtLibScript
 
-from rmo import distributionCompare
-from rmo.executors import SolverExecutor, SolverOutput
+from smt_rmo import distributionCompare
+from smt_rmo.executors import SolverExecutor, SolverOutput
 
 DefaultMetric: dict = {}
 with open(
