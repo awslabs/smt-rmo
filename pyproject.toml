@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "smt_rmo"
-version = "1.0.1"
+version = "1.0.2"
 description = "Small utility to reduce the size of and obfuscate an SMTLib input while preserving a solver's behavior"
 authors = ["Aws Albarghouthi <awsb@amazon.com>, Antonio Filieri <afilieri@amazon.com>, Miryung Kim <miryung@amazon.com>, Jiyuan Wang <jiyuanw@amazon.com>"]
 readme = "README.md"

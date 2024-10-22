@@ -1,0 +1,3 @@
+include LICENSE.txt README.md
+include src/smt_rmo/*.json
+recursive-include vendors/pysmt/pysmt *
